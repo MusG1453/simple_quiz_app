@@ -30,6 +30,15 @@ class _QuizState extends State<Quiz> {
 
   @override
   Widget build(context) {
+    // final screenWidget = activeScreen == 'start-screen' // ?2
+    //     ? StartScreen(switchScreen)
+    //     : const QuestionsScreen();
+    Widget screenWidget = StartScreen(switchScreen);
+
+    if (activeScreen == 'questions-screen') {
+      screenWidget = const QuestionsScreen();
+    }
+
     return MaterialApp(
       home: Scaffold(
         body: Container(
@@ -44,9 +53,7 @@ class _QuizState extends State<Quiz> {
             ),
           ),
           // child: activeScreen, // ?1
-          child: activeScreen == 'start-screen' // ?2
-              ? StartScreen(switchScreen)
-              : const QuestionsScreen(),
+          child: screenWidget, // ?2
         ),
       ),
     );
