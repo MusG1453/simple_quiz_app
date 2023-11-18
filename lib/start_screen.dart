@@ -7,7 +7,7 @@ class StartScreen extends StatelessWidget {
   final void Function() startQuiz;
 
   @override
-  Widget build(context) {
+  Widget build(BuildContext context) {
     return Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -39,12 +39,3 @@ class StartScreen extends StatelessWidget {
     );
   }
 }
-
-
-// Opacity(
-          //   opacity: 0.7,
-          //   child: Image.asset(
-          //     'assets/images/quiz-logo.png',
-          //     width: 300,
-          //   ),
-          // ),
